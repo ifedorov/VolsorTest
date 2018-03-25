@@ -1,0 +1,21 @@
+Volsor test task
+
+Write a REST web service for currency conversion.
+Exchange rates might be taken from free sources (e.g. https://openexchangerates.org/) and should be updated once a day.
+User interface design is up to you.
+Currencies: Czech koruna, Euro, Polish złoty and US dollar.
+The application should be tested as well. Code coverage is important.
+The project should be uploaded to GitHub/Bitbucket.
+
+
+#RUN
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py update_rates
+python manage.py test
+python manage.py runserver 8000
+
+
+curl '127.0.0.1:8000/v0/rates?base=USD&rate=PLN&amount=1'
+
